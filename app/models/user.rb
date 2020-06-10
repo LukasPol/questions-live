@@ -29,6 +29,10 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_and_belongs_to_many :oauth_credentials
+
+  has_many :posts
+  has_many :questions
+  
   
   def self.crete_from_provider_data(provider_data)
     where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do |user|
@@ -38,6 +42,5 @@ class User < ApplicationRecord
       user.last_name = provider_data.info.last_name
       user.image_url = provider_data.info.image
     end
-
   end
 end
