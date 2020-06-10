@@ -5,6 +5,9 @@
 #  id                     :bigint           not null, primary key
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
+#  first_name             :string
+#  image_url              :string
+#  last_name              :string
 #  provider               :string(50)       default(""), not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -31,6 +34,9 @@ class User < ApplicationRecord
     where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do |user|
       user.email = provider_data.info.email
       user.password = Devise.friendly_token[0, 20]
+      user.first_name = provider_data.info.first_name
+      user.last_name = provider_data.info.last_name
+      user.image_url = provider_data.info.image
     end
 
   end
