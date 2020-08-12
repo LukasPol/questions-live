@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_06_10_210503) do
 
   create_table "questions", force: :cascade do |t|
     t.string "text"
-    t.integer "vote"
+    t.integer "vote", default: 0
     t.bigint "post_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

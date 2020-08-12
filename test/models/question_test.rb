@@ -4,7 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  text       :string
-#  vote       :integer
+#  vote       :integer          default(0)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  post_id    :bigint           not null

@@ -15,7 +15,11 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = @post.questions.new(question_params)
-    @question.user = current_user
+    @question.user_id = current_user.id
+
+    
+    binding.pry
+    
 
     respond_to do |format|
       if @question.save

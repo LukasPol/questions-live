@@ -30,8 +30,8 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :oauth_credentials
 
-  has_many :posts
-  has_many :questions
+  has_many :posts, dependent: :destroy
+  has_many :questions, dependent: :destroy
   
   
   def self.crete_from_provider_data(provider_data)
