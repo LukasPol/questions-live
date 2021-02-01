@@ -1,4 +1,5 @@
 import 'jquery'
 import 'popper.js'
 import 'bootstrap'
-import '../styles/global'
+import '../src/styles/global';
+import '../src/js/flashMessages';

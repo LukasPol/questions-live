@@ -31,6 +31,11 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'simple_form', '5.0.2'
 gem 'devise', '4.7.1'
 gem 'annotate', '3.1.1'
+gem 'dotenv-rails'
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'activerecord-session_store'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

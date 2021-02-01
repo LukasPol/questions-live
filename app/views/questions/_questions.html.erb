@@ -1,0 +1,5 @@
+<% @post.questions.each do |question| %>
+  <p><%= question.text %></p>
+  <p><%= question.vote %></p>
+  <p><%= question.user %></p>
+<% end %>
